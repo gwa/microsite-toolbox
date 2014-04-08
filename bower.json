@@ -12,7 +12,9 @@
     "bower_components",
     "test",
     "tests",
-    "grunt"
+    "grunt",
+    "*.sublime-project",
+    "Gruntfile.js"
   ],
   "dependencies": {
     "fancy-fields": "gwa/fancy-fields#~1.2.5",
