@@ -1,0 +1,16 @@
+{
+	"options": {
+		"vendor": [
+			"bower_components/jquery/dist/jquery.js",
+			"bower_components/fancy-fields/src/fancyfields-1.2.js",
+			"bower_components/gwajs/src/gwa.EventDispatcher.js"
+		],
+		"specs": [
+			"tests/gwagore.ProductBoxes.test.js"
+		]
+	},
+	"src": [
+		"src/gwagore.ProductBoxes.js",
+		"src/gwagore.ProductFilters.js"
+	]
+}

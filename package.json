@@ -1,0 +1,16 @@
+{
+  "name": "gore-microsite-toolkit",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://gwa_groves@bitbucket.org/greatwhiteark/gore-microsite-toolkit.git"
+  },
+  "author": "Timothy Groves <groves@greatwhiteark.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-jscs-checker": "^0.4.1",
+    "grunt-contrib-jasmine": "^0.6.3"
+  }
+}

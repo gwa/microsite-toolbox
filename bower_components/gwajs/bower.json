@@ -1,0 +1,27 @@
+{
+  "name": "gwajs",
+  "version": "0.0.2",
+  "homepage": "https://github.com/gwa/gwajs",
+  "authors": [
+    "Timothy Groves <groves@greatwhiteark.com>"
+  ],
+  "description": "GWA JS Utilities",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "private": true,
+  "main": [
+    "src/gwa.extend.js"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "grunt",
+    "Gruntfile.js",
+    "package.json"
+  ]
+}

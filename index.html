@@ -1,0 +1,86 @@
+<html>
+<head>
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/fancy-fields/src/fancyfields-1.2.min.js"></script>
+	<script src="bower_components/gwajs/src/gwa.EventDispatcher.js"></script>
+	<script src="src/gwagore.ProductBoxes.js"></script>
+	<script src="src/gwagore.ProductFilters.js"></script>
+</head>
+<body>
+	<div class="section products" id="collection" data-source="products.json">
+		<h1><b>Kollektion</b> Frühjahr/Sommer 2014</h1>
+		<div class="filter">
+			<form id="frm_products" method="post" action="">
+				<fieldset>
+					<div class="brand">
+						<select id="brand" data-allbrands="Alle Marken">
+						</select>
+						<label>Marken</label>
+					</div>
+					<div class="gender">
+						<input type="checkbox" id="gender_m" name="gender_m" checked="checked" />
+						<label>Männer</label>
+						<input type="checkbox" id="gender_f" name="gender_f" checked="checked" />
+						<label>Frauen</label>
+						<input type="checkbox" id="gender_k" name="gender_k" checked="checked" />
+						<label>Kinder</label>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+		<div class="productboxes" data-lang="DE_de" data-learnmore="Mehr Information"></div>
+	</div>
+	<script>
+		var
+		productsurl = $('#collection').attr('data-source'),
+		initialfilters = {
+			brand: '',
+			gender_m: true,
+			gender_f: true,
+			gender_k: true
+		},
+		/**
+		 * Function that filters product based on filters passed
+		 */
+		filterfunc = function ( data, filters ) {
+			if (filters.brand !== '' && data.brand !== filters.brand) {
+				return false;
+			}
+			if (!filters.gender_m && data.gender === 'male') {
+				return false;
+			}
+			if (!filters.gender_f && data.gender === 'female') {
+				return false;
+			}
+			if (!filters.gender_k && data.gender === 'kids') {
+				return false;
+			}
+			return true;
+		},
+		isie = $('html').hasClass('ie');
+
+		$.getJSON(
+			productsurl,
+			function (data) {
+				var productfilters = new gwagore.ProductFilters(
+					$('#frm_products'),
+					data.products,
+					initialfilters
+				);
+				var productboxes = new gwagore.ProductBoxes(
+					$('.productboxes'),
+					data.products,
+					filterfunc,
+					isie
+				);
+				productfilters.on('CHANGE', function (obj, filters) {
+					productboxes.filterProducts(filters);
+				});
+				productboxes.init();
+				productfilters.init();
+				productboxes.filterProducts(productfilters.getFilters());
+			}
+		);
+	</script>
+</body>
+</html>
