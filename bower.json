@@ -1,6 +1,6 @@
 {
   "name": "gore-microsite-toolbox",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "authors": [
     "Timothy Groves <groves@greatwhiteark.com>"
   ],
@@ -11,11 +11,12 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "grunt"
   ],
   "dependencies": {
     "fancy-fields": "gwa/fancy-fields#~1.2.5",
     "jquery": "~2.1.0",
-    "gwajs": "gwa/gwajs#~0.0.1"
+    "gwajs": "gwa/gwajs#~0.0.2"
   }
 }

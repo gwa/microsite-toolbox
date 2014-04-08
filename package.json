@@ -1,6 +1,6 @@
 {
   "name": "gore-microsite-toolkit",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "repository": {
     "type": "git",
     "url": "https://gwa_groves@bitbucket.org/greatwhiteark/gore-microsite-toolkit.git"
@@ -11,6 +11,7 @@
     "grunt": "^0.4.4",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-jscs-checker": "^0.4.1",
-    "grunt-contrib-jasmine": "^0.6.3"
+    "grunt-contrib-jasmine": "^0.6.3",
+    "grunt-contrib-csslint": "^0.2.0"
   }
 }
