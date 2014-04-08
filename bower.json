@@ -16,7 +16,7 @@
   ],
   "dependencies": {
     "fancy-fields": "gwa/fancy-fields#~1.2.5",
-    "jquery": "~2.1.0",
+    "jquery": "~1.11.0",
     "gwajs": "gwa/gwajs#~0.0.2"
   }
 }
